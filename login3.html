@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Videoclub IHC</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+	body{
+		color: #002D87 ;
+		font-weight: bold;
+		background: #262727;
+	}
+	.fa{
+		color: #002D87;
+	}
+	
+	#botonTarjeta{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	#botonEnviarDatos{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	.container{
+		background-color: white;
+	    margin-top: 30px;
+	    border-radius: 18px;
+	}
+</style>
+<body>
+	
+	<div class="container" style="background-color: white;">
+
+		<div class="row justify-content-center" id="clase_1">
+			<div class="col col-6">
+			  	<img src="credit-card.gif" class="img-fluid" alt="Responsive image" style="margin-left: -20px;">
+			</div>
+			<div class="col col-6" style="background-color: #fff; padding: 20px; margin-left: -10%;">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 15px;">
+						<h1>VideoClub IHC</h1>
+						<p style="color: #3f403f;font-weight: 400;">Bienvenido al VideoClub IHC por favor introduzca su tarjeta personal</p>
+					</div>
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<form>
+							<div class="form-group">
+							    <label for="tarjetaCredito">Número de Tarjeta</label>
+							    <div class="input-group mb-3">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" id="basic-addon1"><i class="fa fa-credit-card"></i></span>
+								  </div>
+								  <input id="tarjetaCredito" type="text" class="form-control" placeholder="xxxx-xxxx-xxxx-xxxx-xxxx" aria-label="" aria-describedby="basic-addon1">
+								</div>
+							</div>
+
+							<div class="form-group" id="formularioDNI">
+								<label for="tarjetaCredito">DNI</label>
+						    	<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" id="basic-addon1"><i class="fa fa-address-card"></i></span>
+								  </div>
+								  <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+								</div>
+							</div>
+
+						 	<div class="form-group" id="formularioClave">
+								<label for="tarjetaCredito">Clave de Tarjeta</label>
+								<div class="input-group mb-3">
+								  <div class="input-group-prepend">
+								    <span class="input-group-text" id="basic-addon1"><i class="fa fa-address-card"></i></span>
+								  </div>
+								  <input type="password" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+								</div>
+							</div>
+							<div id="divBotonEnviar" style="text-align: center;">
+								<a href="#" class="btn btn-primary" id="botonTarjeta">Ingresar Tarjeta</a>
+							</div>
+							<div id="divBotonEnviar2" style="text-align: center;">
+								<a href="#" class="btn btn-primary" id="botonEnviarDatos">Ingresar</a>
+							</div>
+						</form>
+					</div>
+
+					<div class="col col-12" id="divCargando" style="text-align: center; margin-bottom: 15px;">
+				  		<img src="imagen_2.gif" class="img-fluid" alt="Responsive image">
+				  		<small id="tarjetaCreditoAyuda" class="form-text text-muted">Revisando el saldo de su tarjeta.</small>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row justify-content-center" id="clase_2" >
+			<div class="col col-12" style="background-color: #fffacd; margin-top: 30px;">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
+						<h1>VideoClub IHC</h1>
+						<h3>La tarjeta ingresada no presenta saldo disponible.</h3>
+					</div>
+				
+					<div class="col col-6 align-self-center" style="text-align: center;">
+				  		<img src="imagen_3.gif" class="img-fluid" alt="Responsive image">
+					</div>
+					<div class="col col-6 align-self-center" style="text-align: center;">
+				  		
+				  		
+
+				  		<table class="table table-bordered">
+						  <thead>
+						    <tr class="table-light">
+						      <th scope="col"><h1>Saldo</h1></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr class="table-light">
+						      <th scope="row"><h1><span id="valorDeMonto">0.00</span> soles</h1></th>
+						    </tr>
+						  </tbody>
+						</table>
+						<form id="formularioMonto">
+						  <div class="form-group" style="text-align: left;">
+						    <label for="tarjetaCredito">Monto para recargar</label>
+						    <input type="text" class="form-control" id="montoAnadido" aria-describedby="tarjetaCredito" placeholder="Monto en Soles">
+						    <small id="tarjetaCreditoAyuda" class="form-text text-muted">El monto debe tener el formato X.XX</small>
+						  </div>
+						  
+							<div id="divBotonEnviarMonto" style="text-align: center;">
+								<a href="#" class="btn btn-primary" id="botonMonto">Ingresar Monto</a>
+							</div>
+						</form>
+						<div id="divBotonRecargar" style="text-align: center; margin-top: 15px;">
+							<a href="#" class="btn btn-primary" id="botonRecargar">Recargar Tarjeta</a>
+						</div>
+						<div class="col col-12" id="divCargando2" style="text-align: center; margin-bottom: 15px;">
+					  		<img src="imagen_2.gif" class="img-fluid" alt="Responsive image">
+					  		<small id="tarjetaCreditoAyuda" class="form-text text-muted">Revisando el saldo de su tarjeta.</small>
+						</div>
+
+					</div>
+
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<div id="divBotonAtras" style="text-align: center;">
+							<a href="#" class="btn btn-primary" id="botonAtras">Volver Atrás</a>
+							<a href="#" class="btn btn-primary" id="botonSiguiente">Siguiente</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center" id="clase_3" >
+			<div class="col col-12" style="background-color: #fffacd; margin-top: 30px;">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
+						<h1>VideoClub IHC</h1>
+					</div>
+				
+					<div class="col col-6 align-self-center" style="text-align: center;">
+				  		<img src="imagen_3.gif" class="img-fluid" alt="Responsive image">
+					</div>
+					<div class="col col-6 align-self-center" style="text-align: center;">
+				  		
+				  		<table class="table table-bordered">
+						  <thead>
+						    <tr class="table-light">
+						      <th scope="col"><h1>Menu</h1></th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr class="table-light">
+						      <th scope="row"><a href="#" class="btn btn-primary">Devolver una película</a></th>
+						    </tr>
+						    <tr class="table-light">
+						      <th scope="row"><a href="#" class="btn btn-primary">Alquilar Películas</a></th>
+						    </tr>
+						    <tr class="table-light">
+						      <th scope="row"><a id="botonRecargarTarjeta3" href="#" class="btn btn-primary">Recargar la tarjeta</a></th>
+						    </tr>
+						  </tbody>
+						</table>
+
+					</div>
+
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<div id="divBotonAtras" style="text-align: center;">
+							<a href="#" class="btn btn-primary" id="botonAtras3">Volver Atrás</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row justify-content-center" id="clase_4" >
+			<div class="col col-12" style="background-color: #fffacd; margin-top: 30px;">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 15px; margin-bottom: 10px;">
+						<h1>VideoClub IHC</h1>
+					</div>
+				
+					<div class="col col-12 align-self-center" style="text-align: center;  ">
+						<div class="row">
+						<div class="col col-3">
+					  		<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000548?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">COLD WAR</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000524?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">LA ODISEA DE LOS GILES</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000549?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">MICHELANGELO</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000485?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">PROYECTO GÉMINIS</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000468?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">TERROR A 47 METROS: EL SEGUNDO ATAQUE</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+						
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000524?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">AD ASTRA: HACIA LAS ESTRELLAS</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000473?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top"  alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">ARAÑA</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						<div class="col col-3">
+							<div class="card" style="width: 18rem; padding:15px">
+							  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000459?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+							  <div class="card-body">
+							    <h5 class="card-title">DORA Y LA CIUDAD PERDIDA</h5>
+							    <a href="#" class="btn btn-primary">Pedir Película</a>
+							  </div>
+							</div>
+						</div>
+
+						
+					</div>
+					</div>
+
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<div id="divBotonAtras" style="text-align: center;">
+							<a href="#" class="btn btn-primary" id="botonAtras3">Volver Atrás</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			var saldo = 0.00
+			var paginaOrigen = 1
+			var paginaActual = 1
+			$('#clase_2').hide()
+			$('#clase_3').hide()
+			$('#clase_4').hide()
+
+			$('#divBotonEnviar2').hide()
+			$('#formularioDNI').hide()
+			$('#formularioClave').hide()
+
+			$('#formularioMonto').hide()
+
+			$('#divCargando').hide()
+		    $('#botonTarjeta').on('click',()=>{
+		    	$('#tarjetaCredito').val('4000 1234 5678 9010')
+		    	$('#divBotonEnviar').hide()
+		    	$('#divCargando').show()
+		    	setTimeout(()=>{
+		    		$('#divCargando').hide()
+					$('#formularioDNI').show()
+					$('#formularioClave').show()
+					$('#divBotonEnviar2').show()
+		    		
+
+		    	},1000);
+		    })
+
+		    $('#botonEnviarDatos').on('click',()=>{
+		    	$('#divBotonEnviar2').hide()
+		    	$('#divCargando').show()
+		    	setTimeout(()=>{
+		    		$('#clase_1').hide()
+		    		if(saldo>0){
+		    			$('#clase_3').show()
+		    			paginaActual = 3
+		    			paginaOrigen = 1
+		    		}else{
+		    			$('#clase_2').show()
+		    			paginaActual = 2
+		    			paginaOrigen = 1
+		    		}
+		    		
+		    		
+
+		    	},1000);
+		    })
+		    
+		    $('#divCargando2').hide()
+		    $('#botonSiguiente').hide()
+
+		    $('#botonRecargar').on('click',()=>{
+		    	$('#divBotonRecargar').hide()
+		    	$('#divBotonEnviarMonto').show()
+		    	$('#divCargando2').show()
+		    	setTimeout(()=>{
+		    		$('#divCargando2').hide()
+			    	$('#formularioMonto').show()
+		    	},1000);
+		    })
+
+		    $('#botonMonto').on('click',()=>{
+		    	if(isNaN($('#montoAnadido').val())==false){
+		    		if(parseFloat($('#montoAnadido').val())>0){
+		    			var MontoNuevo = saldo+parseFloat($('#montoAnadido').val());
+		    			saldo = Math.round(MontoNuevo * 100) / 100 
+			    		$('#valorDeMonto').html(saldo)
+
+			    		$('#divBotonEnviarMonto').hide()
+				    	$('#formularioMonto').hide()
+				    	$('#divCargando2').show()
+				    	setTimeout(()=>{
+				    		$('#divCargando2').hide()
+					    	$('#divBotonRecargar').show()
+					    	$('#botonSiguiente').show()
+				    	},1000);
+		    		}else{
+		    			alert("El monto debe ser mayor que cero")
+		    		}
+		    	}else{
+		    		alert("no es numero")
+		    	}
+		    })
+
+		    $('#botonAtras').on('click',()=>{
+		    	$('#clase_2').hide()
+		    	$('#clase_1').show()
+		    	$('#divBotonEnviar').show()
+		    	$('#divCargando').hide()
+				$('#formularioDNI').hide()
+				$('#formularioClave').hide()
+				$('#dniUsuario').val('')
+				$('#claveTarjetaCredito').val('')
+				$('#tarjetaCredito').val('')
+		    })
+
+		    $('#botonSiguiente').on('click',()=>{
+		    	paginaActual = 3
+		    	paginaOrigen = 2
+		    	$('#clase_2').hide()
+		    	$('#clase_3').show()
+		    })
+
+		    //Eventos para la pagina 3
+
+		    $('#botonAtras3').on('click',()=>{
+		    	if(paginaOrigen==1){
+		    		$('#clase_3').hide()
+		    		$('#clase_1').show()
+		    	}
+		    	if(paginaOrigen==2){
+		    		$('#clase_3').hide()
+		    		$('#clase_2').show()
+		    	}
+		    	
+		    	$('#divBotonEnviar').show()
+		    	$('#divCargando').hide()
+				$('#formularioDNI').hide()
+				$('#formularioClave').hide()
+				$('#dniUsuario').val('')
+				$('#claveTarjetaCredito').val('')
+				$('#tarjetaCredito').val('')
+		    })
+
+		    
+		    $('#botonRecargarTarjeta3').on('click',()=>{
+		    	paginaActual = 2
+		    	paginaOrigen = 3
+		    	$('#clase_3').hide()
+		    	$('#clase_2').show()
+		    })
+		});
+	</script>
+</body>
+</html>

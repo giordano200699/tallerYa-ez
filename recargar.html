@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Videoclub IHC</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+	body{
+		color: #002D87 ;
+		font-weight: bold;
+		background: #262727;
+	}
+	.fa{
+		color: #002D87;
+	}
+	
+	#botonTarjeta{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	#botonEnviarDatos{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	.container{
+		background-color: white;
+	    margin-top: 30px;
+	    border-radius: 18px;
+	}
+	.card{
+		border-radius: 5px;
+		
+		background-size: 100%;
+		height: 300px;
+		margin-bottom: 15px;
+	}
+	.card-body{
+		border-radius: 5px;
+		background: #0000008f;
+		color: #fff;
+		text-align: center;
+	}
+	.card-title{
+		font-weight: 700;
+		font-size: 35px;
+		text-align: center;
+		height: 100px;
+	}
+	.card-text{
+		font-weight: 350;
+		color: #fff;
+		height: 80px;
+	}
+	#botonRecargar, #botonMonto{
+		background-color: orange;
+	    border-color: #ffa500;
+	    border-radius: 20px;
+	    width: 150px;
+	}
+	.table thead th {
+	    vertical-align: bottom;
+	    border-bottom: 2px solid #dee2e6;
+	    border-top: 2px solid #dee2e6;
+	}
+</style>
+<body>
+	
+	<div class="container" style="background-color: white;">
+
+		<div class="row justify-content-center" >
+			<div class="col col-12" style="">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 25px;">
+						<h1 style="margin: 0px;">VideoClub IHC</h1>
+						<p style="color: #3f403f;font-weight: 400; font-size: 20px;">Recargar saldo</p>
+					</div>
+					<div class="col col-12" style="padding: 20px;">
+						<div class="row">
+							<div class="col col-6" style="text-align: center;">
+						  		<img src="imagen_1.gif" class="img-fluid" alt="Responsive image">
+							</div>
+							<div class="col col-6">
+
+						  		<table class="table table-bordered">
+								  <thead>
+								    <tr class="table-light">
+								      <th scope="col"><h1>Saldo</h1></th>
+								      <th scope="row"><h1>S/ <span id="valorDeMonto">0.00</span> soles</h1></th>
+								    </tr>
+								  </thead>
+								</table>
+								<form id="formularioMonto">
+								  	<div class="form-group">
+									    <label for="tarjetaCredito">Monto para recargar</label>
+									    <div class="input-group mb-3">
+										  <div class="input-group-prepend">
+										    <span class="input-group-text" id="basic-addon1"><i class="fa fa-money"></i></span>
+										  </div>
+										  <input id="montoAnadido" type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+										</div>
+									</div>
+									<div id="divBotonEnviarMonto" style="text-align: center;">
+										<a href="#" class="btn btn-primary" id="botonMonto">Ingresar Monto</a>
+									</div>
+								</form>
+								<div id="divBotonRecargar" style="text-align: center; margin-top: 15px;">
+									<a href="#" class="btn btn-primary" id="botonRecargar">Recargar Tarjeta</a>
+								</div>
+								<div class="col col-12" id="divCargando2" style="text-align: center; margin-bottom: 15px;">
+							  		<img src="imagen_2.gif" class="img-fluid" alt="Responsive image">
+							  		<small id="tarjetaCreditoAyuda" class="form-text text-muted">Revisando el saldo de su tarjeta.</small>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<div id="divBotonAtras" style="text-align: center;">
+							<a href="menu.html" class="btn btn-primary" id="botonAtras" style="border-radius: 15px; width: 150px;">Volver Atrás</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			var saldo = 0.00
+			var paginaOrigen = 1
+			var paginaActual = 1
+			$('#clase_2').hide()
+			$('#clase_3').hide()
+			$('#clase_4').hide()
+
+			$('#divBotonEnviar2').hide()
+			$('#formularioDNI').hide()
+			$('#formularioClave').hide()
+
+			$('#formularioMonto').hide()
+
+			$('#divCargando').hide()
+		    $('#botonTarjeta').on('click',()=>{
+		    	$('#tarjetaCredito').val('4000 1234 5678 9010')
+		    	$('#divBotonEnviar').hide()
+		    	$('#divCargando').show()
+		    	setTimeout(()=>{
+		    		$('#divCargando').hide()
+					$('#formularioDNI').show()
+					$('#formularioClave').show()
+					$('#divBotonEnviar2').show()
+		    		
+
+		    	},1000);
+		    })
+
+		    $('#botonEnviarDatos').on('click',()=>{
+		    	$('#divBotonEnviar2').hide()
+		    	$('#divCargando').show()
+		    	setTimeout(()=>{
+		    		$('#clase_1').hide()
+		    		if(saldo>0){
+		    			$('#clase_3').show()
+		    			paginaActual = 3
+		    			paginaOrigen = 1
+		    		}else{
+		    			$('#clase_2').show()
+		    			paginaActual = 2
+		    			paginaOrigen = 1
+		    		}
+		    		
+		    		
+
+		    	},1000);
+		    })
+		    
+		    $('#divCargando2').hide()
+		    $('#botonSiguiente').hide()
+
+		    $('#botonRecargar').on('click',()=>{
+		    	$('#divBotonRecargar').hide()
+		    	$('#divBotonEnviarMonto').show()
+		    	$('#divCargando2').show()
+		    	setTimeout(()=>{
+		    		$('#divCargando2').hide()
+			    	$('#formularioMonto').show()
+		    	},1000);
+		    })
+
+		    $('#botonMonto').on('click',()=>{
+		    	if(isNaN($('#montoAnadido').val())==false){
+		    		if(parseFloat($('#montoAnadido').val())>0){
+		    			var MontoNuevo = saldo+parseFloat($('#montoAnadido').val());
+		    			saldo = Math.round(MontoNuevo * 100) / 100 
+			    		$('#valorDeMonto').html(saldo)
+
+			    		$('#divBotonEnviarMonto').hide()
+				    	$('#formularioMonto').hide()
+				    	$('#divCargando2').show()
+				    	setTimeout(()=>{
+				    		$('#divCargando2').hide()
+					    	$('#divBotonRecargar').show()
+					    	$('#botonSiguiente').show()
+				    	},1000);
+		    		}else{
+		    			alert("El monto debe ser mayor que cero")
+		    		}
+		    	}else{
+		    		alert("no es numero")
+		    	}
+		    })
+
+		    $('#botonAtras').on('click',()=>{
+		    	$('#clase_2').hide()
+		    	$('#clase_1').show()
+		    	$('#divBotonEnviar').show()
+		    	$('#divCargando').hide()
+				$('#formularioDNI').hide()
+				$('#formularioClave').hide()
+				$('#dniUsuario').val('')
+				$('#claveTarjetaCredito').val('')
+				$('#tarjetaCredito').val('')
+		    })
+
+		    $('#botonSiguiente').on('click',()=>{
+		    	paginaActual = 3
+		    	paginaOrigen = 2
+		    	$('#clase_2').hide()
+		    	$('#clase_3').show()
+		    })
+
+		    //Eventos para la pagina 3
+
+		    $('#botonAtras3').on('click',()=>{
+		    	if(paginaOrigen==1){
+		    		$('#clase_3').hide()
+		    		$('#clase_1').show()
+		    	}
+		    	if(paginaOrigen==2){
+		    		$('#clase_3').hide()
+		    		$('#clase_2').show()
+		    	}
+		    	
+		    	$('#divBotonEnviar').show()
+		    	$('#divCargando').hide()
+				$('#formularioDNI').hide()
+				$('#formularioClave').hide()
+				$('#dniUsuario').val('')
+				$('#claveTarjetaCredito').val('')
+				$('#tarjetaCredito').val('')
+		    })
+
+		    
+		    $('#botonRecargarTarjeta3').on('click',()=>{
+		    	paginaActual = 2
+		    	paginaOrigen = 3
+		    	$('#clase_3').hide()
+		    	$('#clase_2').show()
+		    })
+		});
+	</script>
+</body>
+</html>
