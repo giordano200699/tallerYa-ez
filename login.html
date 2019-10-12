@@ -138,7 +138,7 @@
 						  </thead>
 						  <tbody>
 						    <tr class="table-light">
-						      <th scope="row"><a href="#" class="btn btn-primary">Devolver una película</a></th>
+						      <th scope="row"><a id="botonDevolverPelicula"  href="#" class="btn btn-primary">Devolver una película</a></th>
 						    </tr>
 						    <tr class="table-light">
 						      <th scope="row"><a id="botonAlquilarPelicula" href="#" class="btn btn-primary">Alquilar Películas</a></th>
@@ -267,6 +267,40 @@
 			</div>
 		</div>
 
+		<div class="row justify-content-center" id="clase_5">
+			<div class="col col-6" style="background-color: #fffacd; margin-top: 30px;">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 15px;">
+						<h1>VideoClub IHC</h1>
+						<p>Por favor introduzca su pelicula</p>
+					</div>
+				
+					<div class="col col-12" style="text-align: center;">
+				  		<img src="imagen_1.gif" class="img-fluid" alt="Responsive image">
+					</div>
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<form>
+						  <div class="form-group">
+						    <label for="tarjetaCredito">Nombre de la película</label>
+						    <input type="text" class="form-control" id="nombrePelicula" aria-describedby="tarjetaCredito" placeholder="Nombre de la película" readonly='readonly'>
+						    <small id="tarjetaCreditoAyuda" class="form-text text-muted">El nombre de la película se visualizará automáticamente.</small>
+						  </div>
+
+							<div id="divBotonIngresarPelicula" style="text-align: center;">
+								<a href="#" class="btn btn-primary" id="botonAtras5">Atras</a>
+								<a href="#" class="btn btn-primary" id="botonIngresarPelicula">Ingresar Película</a>
+							</div>
+						</form>
+					</div>
+
+					<div class="col col-12" id="divCargando5" style="text-align: center; margin-bottom: 15px;">
+				  		<img src="imagen_2.gif" class="img-fluid" alt="Responsive image">
+					</div>
+				</div>
+			</div>
+		</div>
+
 
 	</div>
 
@@ -278,7 +312,8 @@
 			var peliculas = []
 			$('#clase_2').hide()
 			$('#clase_3').hide()
-			$('#clase_1').hide()
+			$('#clase_5').hide()
+			$('#clase_4').hide()
 
 			$('#divBotonEnviar2').hide()
 			$('#formularioDNI').hide()
@@ -331,6 +366,7 @@
 		    	setTimeout(()=>{
 		    		$('#divCargando2').hide()
 			    	$('#formularioMonto').show()
+			    	$('#valorDeMonto').html(saldo)
 		    	},1000);
 		    })
 
@@ -411,6 +447,15 @@
 		    	$('#clase_4').show()
 		    })
 
+		    $('#botonDevolverPelicula').on('click',()=>{
+
+		    	$('#clase_3').hide()
+		    	$('#clase_5').show()
+		    	$('#botonIngresarPelicula').show()
+		    })
+
+		    
+
 		    //Eventos de la vista 4
 
 		    $('.botonPedir').on('click',function(){
@@ -457,6 +502,41 @@
 		    	}
 		    	
 		    })
+
+		    
+		    $('#divCargando5').hide()
+		    $('#botonIngresarPelicula').on('click',()=>{
+		    	if(peliculas.length>0){
+		    		$('#botonIngresarPelicula').hide()
+			    	$('#divCargando5').show()
+			    	
+			    	$('#nombrePelicula').val($('#peliTitulo'+peliculas[0]).html()+' precio: 20 soles')
+			    	setTimeout(()=>{
+			    		$('#divCargando5').hide()
+			    		var arregloCopia = []
+			    		for(var i=0;i<peliculas.length;i++){
+			    			if(i!=0){
+			    				arregloCopia.push(peliculas[i])
+			    			}
+			    		}
+			    		peliculas = arregloCopia
+			    		saldo = saldo-20;
+			    		$('#valorDeMonto').html(saldo)
+			    	},1000);
+		    	}else{
+		    		alert("No presenta películas prestadas")
+		    	}
+		    	
+		    	
+
+		    })
+		    $('#botonAtras5').on('click',()=>{
+
+		    	$('#clase_5').hide()
+		    	$('#clase_3').show()
+		    })
+
+
 
 		    
 
