@@ -1,0 +1,21 @@
+
+	Es un cajero automatico de un videoclub
+		Entrar al sistema introduciendo su tarjeta personal
+		Se comprueba su saldo de la tarjeta
+		si tiene saldo <=0 permite la accion de recargar
+		Muestra un menún con tres unicas opciones
+			Devolver una pelicula
+			Alquilar un max de tres peliculas
+			Recargar la tarjeta
+		Para alquilar una tarjeta debe estar actualzada y tener saldo
+		Si no, no permite alquilar
+
+
+		Si la tarjeta tiene saldo el usuario puede seleccionar como max 3 peliculas si estan disponibles
+		Para retirarlas debe proceder a confirmar los titulos elegidos
+
+		Al devolver la pelicula se calcula el importe y se actualiza la tarjeta
+
+		Para recargar la tarjeta se marca la cantidad e introduce dinero
+
+		
