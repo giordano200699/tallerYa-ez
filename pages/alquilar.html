@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Videoclub IHC</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
+<style type="text/css">
+	body{
+		color: #002D87 ;
+		font-weight: bold;
+		background: #262727;
+	}
+	.fa{
+		color: #002D87;
+	}
+	
+	#botonTarjeta{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	#botonEnviarDatos{
+		    background-color: orange;
+		    border-color: #ffa500;
+		    border-radius: 20px;
+		    width: 150px;
+	}
+	.container{
+		background-color: white;
+	    margin-top: 30px;
+	    border-radius: 18px;
+	}
+	#botonRecargar, #botonMonto{
+		background-color: orange;
+	    border-color: #ffa500;
+	    border-radius: 20px;
+	    width: 150px;
+	}
+	.table thead th {
+	    vertical-align: bottom;
+	    border-bottom: 2px solid #dee2e6;
+	    border-top: 2px solid #dee2e6;
+	}
+	.card-body{
+		font-family: 'Roboto';
+	    font-size: 15px;
+	    color: #fff;
+	    background-color: #b5121c;
+	    text-align: center;
+	    padding: 0.15rem;
+	}
+	.card{
+		margin-bottom: 20px;
+		cursor: pointer;
+	}
+	.active{
+		border-width: 5px;
+    	border-color: #ffc200;
+	}
+	.nombre_pelicula{
+		padding: 0px;
+		margin: 0px;
+	}
+</style>
+<body>
+	
+	<div class="container" style="background-color: white;">
+
+		<div class="row justify-content-center" >
+			<div class="col col-12" style="">
+				<div class="row">
+					<div class="col col-12" style="text-align: center; margin-top: 25px;">
+						<h1 style="margin: 0px;">VideoClub IHC</h1>
+						<p style="color: #3f403f;font-weight: 400; font-size: 20px;">Alquilar Película</p>
+					</div>
+					<div class="col col-12" style="padding: 20px;">
+						<div class="row" style="padding: 0px 20px;">
+
+							<!-- Araña -->
+							<div class="col col-3">
+						  		<div class="card " data-text="Araña">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000473?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+							<!-- LA ODISEA DE LOS GILES -->
+							<div class="col col-3">
+						  		<div class="card" data-text="La Odisea de los giles">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000524?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+							<!-- MICHELANGELO -->
+							<div class="col col-3">
+						  		<div class="card" data-text="Michelangelo">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000549?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+							<!-- PROYECTO GÉMINIS -->
+							<div class="col col-3">
+						  		<div class="card" data-text="Proyecto Geminis">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000485?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+							<!-- TERROR A 47 METROS: EL SEGUNDO ATAQUE -->
+							<div class="col col-3">
+						  		<div class="card" data-text="Terror a 47 metros: EL segundo ataque">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000468?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+							<!-- DORA Y LA CIUDAD PERDIDA -->
+							<div class="col col-3">
+						  		<div class="card" data-text="Dora y la ciudad perdida">
+								  <img src="https://cineplanechitstatic.azureedge.net/CDN/media/entity/get/FilmPosterGraphic/HO00000459?referenceScheme=HeadOffice&allowPlaceHolder=true" class="card-img-top" alt="...">
+								  <div class="card-body">
+								    <p class="card-text">PEDIR</p>
+								  </div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col col-12" style="margin-top: 15px; margin-bottom: 15px;">
+						<div id="divBotonAtras" style="text-align: center;">
+							<a href="menu.html" class="btn btn-primary" id="" style="border-radius: 20px; width: 150px; margin-right: 10px;">Volver Atrás</a>
+							<a href="#" class="btn btn-primary" id="btnRetirar" style="background-color: orange;margin-left: 10px;
+																								    border-color: #ffa500;
+																								    border-radius: 20px;
+																								    width: 150px;;">Pedir</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<script type="text/javascript">
+		$( document ).ready(function() {
+			var saldo = 0.00
+			var paginaOrigen = 1
+			var paginaActual = 1
+
+			$('.card').on('click',function(){
+				if($(this).hasClass('active')){
+					$(this).removeClass('active');
+				}else{
+					var num = $('.active').toArray().length
+					if(num == 3){
+						Swal.fire({
+						  type: 'error',
+						  title: 'VideoClub IHC',
+						  text: 'Solo puede pedir como máximo 3 películas.'
+						})
+					}else{
+						$(this).addClass('active');
+					}
+				}
+			});
+
+			$('#btnRetirar').on('click',function(){
+				var texto = "¿Está seguro de querer retirar las películas?";
+				$('.active').each(function(){
+					texto = texto + "<p class='nombre_pelicula'>"+$(this).attr('data-text')+"</p>" 
+				})
+
+				Swal.fire({
+				  title: 'Confirmar Películas',
+				  html: texto,
+				  type: 'warning',
+				  showCancelButton: true,
+				  confirmButtonColor: '#3085d6',
+				  cancelButtonColor: '#d33',
+				  confirmButtonText: 'Sí, Confirmar!',
+				  cancelButtonText: 'Cancelar'
+				}).then((result) => {
+				  if (result.value) {
+				    Swal.fire({
+					  title: 'Operación Exitosa!',
+					  text: 'Puede retirar las peliculas de la despensadora.',
+					  type: 'success',
+					  onClose: () => {
+					  	location.href="menu.html";
+					  }
+					})
+				  }
+				})
+				
+			});
+			
+		});
+	</script>
+</body>
+</html>
